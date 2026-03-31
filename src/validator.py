@@ -4,3 +4,6 @@ def validate_headers(headers):
 
 def validate_not_empty(data):
     return len(data) > 0
+
+def validate_row_length(row):
+    return len(row) == 12
