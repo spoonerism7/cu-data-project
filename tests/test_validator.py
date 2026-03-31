@@ -8,3 +8,7 @@ def test_valid_headers():
 def test_invalid_headers():
     headers = ["batch", "time"]  # wrong headers
     assert validate_headers(headers) == False
+
+def test_empty_file():
+    data = []
+    assert validate_not_empty(data) == False
