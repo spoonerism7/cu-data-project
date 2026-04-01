@@ -7,3 +7,11 @@ def validate_not_empty(data):
 
 def validate_row_length(row):
     return len(row) == 12
+
+def validate_unique_batch_ids(rows):
+    seen = set()
+    for row in rows:
+        if row["batch_id"] in seen:
+            return False
+        seen.add(row["batch_id"])
+    return True
