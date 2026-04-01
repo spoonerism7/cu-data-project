@@ -6,12 +6,7 @@ from src.validator import (
     validate_unique_batch_ids,
     validate_readings
 )
-
-def load_csv(file_path):
-    with open(file_path, newline = '', encoding='utf-8-sig') as file:
-        reader = csv.reader(file)
-        data = list(reader)
-    return data
+from src.file_manager import load_csv
 
 def process_file(file_path):
     data = load_csv(file_path)
