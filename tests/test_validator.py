@@ -1,4 +1,4 @@
-from src.validator import validate_headers,validate_not_empty,validate_row_length
+from src.validator import validate_headers,validate_not_empty,validate_row_length,validate_unique_batch_ids,validate_readings
 
 def test_valid_headers():
     headers = ["batch_id", "timestamp"] + [f"reading{i}" for i in range(1, 11)]
@@ -20,3 +20,13 @@ def test_row_length_invalid():
     row = ["1", "12:00"] + ["1.0"] * 5
     assert validate_row_length(row) == False
 
+def test_duplicate_batch_ids():
+    rows = [
+        {"batch_id": "1"},
+        {"batch_id": "1"}
+    ]
+    assert validate_unique_batch_ids(rows) == False
+
+def test_invalid_reading_value():
+    readings = [1.0, 5.5, 10.2] #invalid
+    assert validate_readings(readings) == False

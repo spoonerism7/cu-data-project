@@ -15,3 +15,6 @@ def validate_unique_batch_ids(rows):
             return False
         seen.add(row["batch_id"])
     return True
+
+def validate_readings(readings):
+    return all(0 <= float(r) <= 9.9 for r in readings)
