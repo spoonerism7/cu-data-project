@@ -7,6 +7,9 @@ from src.validator import (
     validate_readings
 )
 from src.file_manager import load_csv
+from src.logger import setup_logger
+
+logger = setup_logger()
 
 def process_file(file_path):
     data = load_csv(file_path)
@@ -22,6 +25,7 @@ def process_file(file_path):
     # header validation
     if not validate_headers(headers):
         print("Invalid headers")
+        logger.error("Invalid headers")
         return False
 
     # row length validation
@@ -48,6 +52,7 @@ def process_file(file_path):
             return False
         
     print("File is valid")
+    logger.info("File is valid")
     return True
 
 if __name__ == "__main__":
