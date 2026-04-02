@@ -20,6 +20,24 @@ def process_file(file_path):
     
     return is_valid
 
+def show_menu():
+    print("\n=== CU Data Processing System ===")
+    print("1. Process a file")
+    print("2. Exit")
+
+
 if __name__ == "__main__":
-    file_path = "data/valid/sample.csv" # change to test
-    process_file(file_path)
+    while True:
+        show_menu()
+        choice = input("Select an option: ")
+
+        if choice == "1":
+            file_path = input("Enter file path: ")
+            process_file(file_path)
+
+        elif choice == "2":
+            print("Exiting program...")
+            break
+
+        else:
+            print("Invalid option, please try again.")
