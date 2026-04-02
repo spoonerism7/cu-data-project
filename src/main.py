@@ -58,4 +58,3 @@ def process_file(file_path):
 if __name__ == "__main__":
     file_path = "data/valid/sample.csv" # change to test
     process_file(file_path)
-
