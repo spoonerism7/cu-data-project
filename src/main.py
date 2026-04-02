@@ -1,4 +1,5 @@
 import csv
+import sys
 from src.validator import validate_file
 from src.file_manager import load_csv
 from src.logger import setup_logger
@@ -16,6 +17,8 @@ def process_file(file_path):
         logger.info(message)
     else:
         logger.error(message)
+    
+    return is_valid
 
 if __name__ == "__main__":
     file_path = "data/valid/sample.csv" # change to test
