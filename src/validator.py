@@ -20,25 +20,31 @@ def validate_readings(readings):
     return all(0 <= float(r) <= 9.9 for r in readings)
 
 def validate_file(data):
-    # Check not empty
+    # check not empty
     if not validate_not_empty(data):
         return False, "File is empty"
     
     headers = data[0]
     rows = data[1:]
 
-    # check headers
+    # Check headers
     if not validate_headers(headers):
         return False, "Invalid headers"
     
-    #check row in rows:
+    # check row length
     for row in rows:
         if not validate_row_length(row):
             return False, "Invalid row length"
     
+    # Convert rows to dicts for batch_id validation
+    dict_rows = []
+    for row in rows:
+        record = dict(zip(headers, row))
+        dict_rows.append(record)
+    
     # check unique batch IDs
     if not validate_unique_batch_ids(dict_rows):
-        return False, "duplicate batch IDs found"
+        return False, "Duplicate batch IDs found"
     
     # check readings
     for row in rows:
