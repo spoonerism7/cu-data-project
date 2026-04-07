@@ -78,9 +78,10 @@ def process_files_from_ftp():
 def show_menu():
     print("\n=== CU Data Processing System ===")
     print("1. Process a file")
-    print("2. Process all new files")
-    print("3. View logs")
-    print("4. Exit")
+    print("2. Process all local files")
+    print("3. Download and process FTP files")
+    print("4. View logs")
+    print("5. Exit")
 
 def view_logs():
     try:
@@ -108,9 +109,12 @@ if __name__ == "__main__":
             process_all_files()
 
         elif choice == "3":
-            view_logs()
+            process_files_from_ftp()
 
         elif choice == "4":
+            view_logs()
+
+        elif choice == "5":
             print("Exiting program...")
             break
 
