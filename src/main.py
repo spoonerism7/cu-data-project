@@ -55,6 +55,7 @@ def process_all_files(folder_path="data/source"):
 
 def process_files_from_ftp():
     host = "127.0.0.1"
+    port = 2121
     username = "user"
     password = "12345"
     remote_dir = "/"
@@ -62,7 +63,7 @@ def process_files_from_ftp():
 
     print("\nConnecting to FTP server...\n")
 
-    files = download_files_from_ftp(host, username, password, remote_dir, local_dir)
+    files = download_files_from_ftp(host, 2121, username, password, remote_dir, local_dir)
 
     if not files:
         print("No files downloaded")

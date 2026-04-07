@@ -1,8 +1,9 @@
 from ftplib import FTP
 import os
 
-def download_files_from_ftp(host, username, password, remote_dir, local_dir):
-    ftp = FTP(host)
+def download_files_from_ftp(host, port, username, password, remote_dir, local_dir):
+    ftp = FTP()
+    ftp.connect(host, port)
     ftp.login(user=username, passwd=password)
 
     ftp.cwd(remote_dir)
