@@ -23,3 +23,14 @@ def mark_file_processed(file_name):
     
     with open(TRACK_FILE, "a") as file:
         file.write(file_name + "\n")
+
+def get_all_files_in_folder(folder_path):
+    if not os.path.exists(folder_path):
+        return []
+    
+    files = []
+    for file in os.listdir(folder_path):
+        if file.endswith(".csv"):
+            files.append(os.path.join(folder_path, file))
+    
+    return files

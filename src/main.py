@@ -33,8 +33,7 @@ def process_file(file_path):
     else:
         logger.error(message)
     
-    if is_valid:
-        mark_file_processed(file_name)
+    mark_file_processed(file_name)
 
     return is_valid
 
