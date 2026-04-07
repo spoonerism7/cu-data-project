@@ -1,3 +1,5 @@
+import re
+
 def validate_headers(headers):
     expected = ["batch_id", "timestamp"] + [f"reading{i}" for i in range(1, 11)]
     return headers == expected
@@ -53,3 +55,7 @@ def validate_file(data):
             return False, "Invalid reading values"
         
     return True, "File is valid"
+
+def validate_filename(file_name):
+    pattern = r"^MED_DATA_\d{14}\.csv$"
+    return re.match(pattern, file_name) is not None

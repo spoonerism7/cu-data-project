@@ -1,12 +1,19 @@
-import csv
-import sys
-from src.validator import validate_file
+import os,csv,sys
+from src.validator import validate_file, validate_filename
 from src.file_manager import load_csv
 from src.logger import setup_logger
 
 logger = setup_logger()
 
 def process_file(file_path):
+    file_name = os.path.basename(file_path)
+
+    if not validate_filename(file_name):
+        message = "Invalid filename format"
+        print(message)
+        logger.error(message)
+        return False
+    
     data = load_csv(file_path)
 
     is_valid, message = validate_file(data)
