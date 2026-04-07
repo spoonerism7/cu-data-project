@@ -11,7 +11,7 @@ def process_file(file_path):
     if not validate_filename(file_name):
         message = "Invalid filename format"
         print(message)
-        logger.error(message)
+        logger.error(f"Invalid filename format: {file_name}")
         return False
     
     data = load_csv(file_path)
