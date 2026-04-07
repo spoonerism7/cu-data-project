@@ -1,11 +1,12 @@
 import os,csv,sys
 from src.validator import validate_file, validate_filename
-from src.file_manager import load_csv, get_processed_files, mark_file_processed
+from src.file_manager import load_csv, get_processed_files, mark_file_processed, mark_file_processed, get_all_files_in_folder
 from src.logger import setup_logger
 
 logger = setup_logger()
 
 def process_file(file_path):
+
     file_name = os.path.basename(file_path)
 
     if not validate_filename(file_name):
@@ -36,6 +37,20 @@ def process_file(file_path):
     mark_file_processed(file_name)
 
     return is_valid
+
+def process_all_files(folder_path="data/source"):
+    files = get_all_files_in_folder(folder_path)
+
+    if not files:
+        print("No files found in source folder")
+        return
+
+    print(f"\nProcessing {len(files)} file(s)...\n")
+
+    for file_path in files:
+        print(f"Processing: {file_path}")
+        process_file(file_path)
+        print()
 
 def show_menu():
     print("\n=== CU Data Processing System ===")
