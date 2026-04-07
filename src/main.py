@@ -1,6 +1,17 @@
 import os,csv,sys
-from src.validator import validate_file, validate_filename
-from src.file_manager import load_csv, get_processed_files, mark_file_processed, mark_file_processed, get_all_files_in_folder
+
+from src.validator import (
+    validate_file, 
+    validate_filename
+)
+
+from src.file_manager import (
+    load_csv,
+    get_processed_files,
+    mark_file_processed,
+    get_all_files_in_folder,
+    move_file
+)
 from src.logger import setup_logger
 from src.ftp_client import download_files_from_ftp
 
@@ -35,6 +46,10 @@ def process_file(file_path):
     else:
         logger.error(message)
     
+    #move file after processing
+    move_file(file_path, is_valid)
+
+    #track file
     mark_file_processed(file_name)
 
     return is_valid
