@@ -55,8 +55,9 @@ def process_all_files(folder_path="data/source"):
 def show_menu():
     print("\n=== CU Data Processing System ===")
     print("1. Process a file")
-    print("2. View logs")
-    print("3. Exit")
+    print("2. Process all new files")
+    print("3. View logs")
+    print("4. Exit")
 
 def view_logs():
     try:
@@ -81,9 +82,12 @@ if __name__ == "__main__":
             print()
 
         elif choice == "2":
-            view_logs()
+            process_all_files()
 
         elif choice == "3":
+            view_logs()
+
+        elif choice == "4":
             print("Exiting program...")
             break
 
