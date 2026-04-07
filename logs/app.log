@@ -12,3 +12,6 @@
 2026-04-07 09:42:04,344 - ERROR - File is empty
 2026-04-07 11:02:28,646 - INFO - File is valid
 2026-04-07 11:02:49,295 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
+2026-04-07 12:07:06,271 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
+2026-04-07 12:07:06,275 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
+2026-04-07 12:07:06,276 - ERROR - Invalid filename format: sample.csv
