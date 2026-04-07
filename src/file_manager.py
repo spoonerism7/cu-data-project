@@ -51,3 +51,5 @@ def move_file(file_path, is_valid):
     new_path = os.path.join(target_dir, file_name)
 
     shutil.move(file_path, new_path)
+
+    print(f"Moved file to: {new_path}")

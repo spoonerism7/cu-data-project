@@ -25,6 +25,13 @@ def process_file(file_path):
         message = "Invalid filename format"
         print(message)
         logger.error(f"Invalid filename format: {file_name}")
+
+        # Move invalid file
+        move_file(file_path, False)
+
+        # Track file
+        mark_file_processed(file_name)
+
         return False
     
     processed_files = get_processed_files()
@@ -47,7 +54,8 @@ def process_file(file_path):
         logger.error(message)
     
     #move file after processing
-    move_file(file_path, is_valid)
+    move_file(file_path, is_valid,)
+    
 
     #track file
     mark_file_processed(file_name)
