@@ -18,3 +18,6 @@
 2026-04-07 12:47:31,458 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
 2026-04-07 12:47:31,459 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
 2026-04-07 12:47:31,460 - ERROR - Invalid filename format: sample.csv
+2026-04-07 14:28:32,695 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
+2026-04-07 14:28:32,696 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
+2026-04-07 14:28:32,696 - ERROR - Invalid filename format: sample.csv
