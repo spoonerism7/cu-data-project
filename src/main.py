@@ -2,6 +2,7 @@ import os,csv,sys
 from src.validator import validate_file, validate_filename
 from src.file_manager import load_csv, get_processed_files, mark_file_processed, mark_file_processed, get_all_files_in_folder
 from src.logger import setup_logger
+from src.ftp_client import download_files_from_ftp
 
 logger = setup_logger()
 
@@ -46,6 +47,28 @@ def process_all_files(folder_path="data/source"):
         return
 
     print(f"\nProcessing {len(files)} file(s)...\n")
+
+    for file_path in files:
+        print(f"Processing: {file_path}")
+        process_file(file_path)
+        print()
+
+def process_files_from_ftp():
+    host = "127.0.0.1"
+    username = "user"
+    password = "12345"
+    remote_dir = "/"
+    local_dir = "data/source"
+
+    print("\nConnecting to FTP server...\n")
+
+    files = download_files_from_ftp(host, username, password, remote_dir, local_dir)
+
+    if not files:
+        print("No files downloaded")
+        return
+
+    print(f"Downloaded {len(files)} file(s)\n")
 
     for file_path in files:
         print(f"Processing: {file_path}")
