@@ -1,4 +1,5 @@
-import csv, os
+import csv, os, shutil
+from datetime import datetime
 
 def load_csv(file_path):
     try:
@@ -34,3 +35,19 @@ def get_all_files_in_folder(folder_path):
             files.append(os.path.join(folder_path, file))
     
     return files
+
+def move_file(file_path, is_valid):
+    file_name = os.path.basename(file_path)
+
+    if is_valid:
+        # Create date-based folder
+        today = datetime.now().strftime("%Y-%m-%d")
+        target_dir = os.path.join("data", "valid", today)
+    else:
+        target_dir = os.path.join("data", "invalid")
+
+    os.makedirs(target_dir, exist_ok=True)
+
+    new_path = os.path.join(target_dir, file_name)
+
+    shutil.move(file_path, new_path)
