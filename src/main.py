@@ -1,6 +1,6 @@
 import os,csv,sys
 from src.validator import validate_file, validate_filename
-from src.file_manager import load_csv
+from src.file_manager import load_csv, get_processed_files, mark_file_processed
 from src.logger import setup_logger
 
 logger = setup_logger()
@@ -14,6 +14,14 @@ def process_file(file_path):
         logger.error(f"Invalid filename format: {file_name}")
         return False
     
+    processed_files = get_processed_files()
+
+    if file_name in processed_files:
+        message = "File has already been processed"
+        print(message)
+        logger.warning(f"Duplicate file skipped: {file_name}")
+        return False
+    
     data = load_csv(file_path)
 
     is_valid, message = validate_file(data)
@@ -25,6 +33,9 @@ def process_file(file_path):
     else:
         logger.error(message)
     
+    if is_valid:
+        mark_file_processed(file_name)
+
     return is_valid
 
 def show_menu():
