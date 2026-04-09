@@ -42,3 +42,6 @@
 2026-04-07 14:50:30,030 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
 2026-04-07 14:50:30,046 - INFO - File is valid
 2026-04-07 14:50:30,048 - ERROR - Invalid filename format: sample.csv
+2026-04-08 20:42:32,926 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
+2026-04-08 20:42:32,944 - INFO - File is valid
+2026-04-08 20:42:32,947 - ERROR - Invalid filename format: sample.csv
