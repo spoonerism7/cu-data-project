@@ -1,47 +1,7 @@
-2026-04-02 10:44:31,340 - INFO File is valid
-2026-04-02 11:50:06,043 - INFO File is valid
-2026-04-02 14:16:44,490 - INFO - File is valid
-2026-04-02 14:16:59,065 - INFO - File is valid
-2026-04-02 14:20:06,012 - ERROR - File is empty
-2026-04-02 14:20:32,939 - ERROR - File is empty
-2026-04-02 14:21:30,038 - INFO - File is valid
-2026-04-02 14:33:40,232 - INFO - File is valid
-2026-04-02 15:47:05,891 - INFO - File is valid
-2026-04-07 09:41:10,135 - ERROR - Invalid filename format
-2026-04-07 09:41:52,802 - INFO - File is valid
-2026-04-07 09:42:04,344 - ERROR - File is empty
-2026-04-07 11:02:28,646 - INFO - File is valid
-2026-04-07 11:02:49,295 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 12:07:06,271 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 12:07:06,275 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 12:07:06,276 - ERROR - Invalid filename format: sample.csv
-2026-04-07 12:47:31,458 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 12:47:31,459 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 12:47:31,460 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:28:32,695 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:28:32,696 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 14:28:32,696 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:31:22,910 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:31:22,910 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 14:31:22,911 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:32:29,636 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:32:29,636 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 14:32:29,637 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:33:57,404 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:33:57,404 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 14:33:57,405 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:35:06,159 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:35:06,159 - WARNING - Duplicate file skipped: MED_DATA_20230603140104.csv
-2026-04-07 14:35:06,160 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:40:54,076 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:40:54,080 - INFO - File is valid
-2026-04-07 14:40:54,083 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:45:35,636 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:45:35,638 - INFO - File is valid
-2026-04-07 14:45:35,641 - ERROR - Invalid filename format: sample.csv
-2026-04-07 14:50:30,030 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-07 14:50:30,046 - INFO - File is valid
-2026-04-07 14:50:30,048 - ERROR - Invalid filename format: sample.csv
-2026-04-08 20:42:32,926 - ERROR - Invalid filename format: MED_DATA_20230603140104 (2).csv
-2026-04-08 20:42:32,944 - INFO - File is valid
-2026-04-08 20:42:32,947 - ERROR - Invalid filename format: sample.csv
+2026-04-09 10:40:00,132 - ERROR - [b1192de2-33ef-11f1-a8c8-325096b39f47] Invalid filename format: INVALID_NAME.csv
+2026-04-09 10:40:00,869 - ERROR - [b19283e0-33ef-11f1-87d4-325096b39f47] Invalid filename format: MED_DATA_20230603140104 (2).csv
+2026-04-09 10:40:01,586 - WARNING - [b200fd48-33ef-11f1-89e3-325096b39f47] Duplicate file skipped: MED_DATA_20230603140104.csv
+2026-04-09 10:40:02,394 - WARNING - [b272985e-33ef-11f1-8957-325096b39f47] Duplicate file skipped: MED_DATA_20260409094932.csv
+2026-04-09 10:40:03,152 - WARNING - [b2ef0d62-33ef-11f1-9e1d-325096b39f47] Duplicate file skipped: MED_DATA_20260409095253.csv
+2026-04-09 10:40:03,885 - WARNING - [b35f6760-33ef-11f1-8b6d-325096b39f47] Duplicate file skipped: MED_DATA_20260409095301.csv
+2026-04-09 10:40:04,593 - ERROR - [b3ca532c-33ef-11f1-a64c-325096b39f47] Invalid filename format: sample.csv
