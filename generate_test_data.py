@@ -50,6 +50,19 @@ def generate_csv(valid=True):
 
     print(f"Generated file: {file_path}")
 
+def generate_test_data():
+    print("Generating test data...\n")
+
+    # Generate valid files
+    for _ in range(2):
+        generate_csv(valid=True)
+
+    # Generate invalid files
+    for _ in range(2):
+        generate_csv(valid=False)
+
+    print("\nDone.\n")
+
 
 if __name__ == "__main__":
     print("Generating test data...\n")

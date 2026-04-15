@@ -1,4 +1,4 @@
-import os,csv,sys
+import os, csv, sys
 
 from src.validator import (
     validate_file, 
@@ -14,8 +14,10 @@ from src.file_manager import (
 )
 from src.logger import setup_logger
 from src.ftp_client import download_files_from_ftp
+from generate_test_data import generate_test_data
 
 logger = setup_logger()
+
 
 def process_file(file_path):
 
@@ -26,10 +28,7 @@ def process_file(file_path):
         print(message)
         logger.error(f"Invalid filename format: {file_name}")
 
-        # Move invalid file
         move_file(file_path, False)
-
-        # Track file
         mark_file_processed(file_name)
 
         return False
@@ -53,14 +52,11 @@ def process_file(file_path):
     else:
         logger.error(message)
     
-    #move file after processing
-    move_file(file_path, is_valid,)
-    
-
-    #track file
+    move_file(file_path, is_valid)
     mark_file_processed(file_name)
 
     return is_valid
+
 
 def process_all_files(folder_path="data/source"):
     files = get_all_files_in_folder(folder_path)
@@ -76,6 +72,7 @@ def process_all_files(folder_path="data/source"):
         process_file(file_path)
         print()
 
+
 def process_files_from_ftp():
     host = "127.0.0.1"
     port = 2121
@@ -86,7 +83,7 @@ def process_files_from_ftp():
 
     print("\nConnecting to FTP server...\n")
 
-    files = download_files_from_ftp(host, 2121, username, password, remote_dir, local_dir)
+    files = download_files_from_ftp(host, port, username, password, remote_dir, local_dir)
 
     if not files:
         print("No files downloaded")
@@ -99,13 +96,22 @@ def process_files_from_ftp():
         process_file(file_path)
         print()
 
+
+def generate_data():
+    print("\nGenerating test data...\n")
+    generate_test_data()
+    print("Test data generated successfully and saved to ftp_root/\n")
+
+
 def show_menu():
     print("\n=== CU Data Processing System ===")
-    print("1. Process a file")
-    print("2. Process all local files")
-    print("3. Download and process FTP files")
-    print("4. View logs")
-    print("5. Exit")
+    print("1. Generate test data")
+    print("2. Process a file")
+    print("3. Process all local files")
+    print("4. Download and process FTP files")
+    print("5. View logs")
+    print("6. Exit")
+
 
 def view_logs():
     try:
@@ -119,26 +125,30 @@ def view_logs():
     except FileNotFoundError:
         print("No log file found")
 
+
 if __name__ == "__main__":
     while True:
         show_menu()
         choice = input("Select an option: ")
 
         if choice == "1":
+            generate_data()
+
+        elif choice == "2":
             file_path = input("Enter file path: ")
             process_file(file_path)
             print()
 
-        elif choice == "2":
+        elif choice == "3":
             process_all_files()
 
-        elif choice == "3":
+        elif choice == "4":
             process_files_from_ftp()
 
-        elif choice == "4":
+        elif choice == "5":
             view_logs()
 
-        elif choice == "5":
+        elif choice == "6":
             print("Exiting program...")
             break
 
