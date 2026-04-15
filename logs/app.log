@@ -25,3 +25,6 @@
 2026-04-13 16:24:04,201 - INFO - [6977f10a-3744-11f1-af49-325096b39f47] File is valid
 2026-04-13 16:24:04,937 - INFO - [69d42fd8-3744-11f1-933e-325096b39f47] File is valid
 2026-04-13 16:24:05,537 - ERROR - [6a43a688-3744-11f1-9a52-325096b39f47] Invalid filename format: sample.csv
+2026-04-15 10:24:29,094 - ERROR - [84bdeed6-38a4-11f1-a825-325096b39f47] File is empty
+2026-04-15 10:26:36,090 - INFO - [d071773a-38a4-11f1-b856-325096b39f47] File is valid
+2026-04-15 10:28:39,777 - ERROR - [1a2b16d8-38a5-11f1-8538-325096b39f47] Invalid filename format: MED_DATA_incorrect_name
