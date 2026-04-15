@@ -27,7 +27,7 @@ The CU Data Processing System is a Python-based application designed to process 
   - Automatically process downloaded files
 
 - Automation:
-  - Script to generate test CSV files
+  - Generate test CSV files directly from the application
 
 - Testing:
   - Unit tests implemented using `pytest`
@@ -36,20 +36,18 @@ The CU Data Processing System is a Python-based application designed to process 
 
 ## Project Structure
 
-
-cu_data_project/
-│
-├── src/ # Main application code
-├── data/ # Input and output data
-├── logs/ # Log files
-├── tests/ # Unit tests
-├── ftp_root/ # Simulated FTP server folder
-├── Dockerfile # Container configuration
-├── requirements.txt # Dependencies
-├── generate_test_data.py # Automation script
-├── ftp_server.py # FTP server script
-└── README.md
-
+cu_data_project/  
+│  
+├── src/                  # Main application code  
+├── data/                 # Input and output data  
+├── logs/                 # Log files  
+├── tests/                # Unit tests  
+├── ftp_root/             # Simulated FTP server folder  
+├── Dockerfile            # Container configuration  
+├── requirements.txt      # Dependencies  
+├── generate_test_data.py # Automation script  
+├── ftp_server.py         # FTP server script  
+└── README.md  
 
 ---
 
@@ -57,6 +55,22 @@ cu_data_project/
 
 - Python 3.13 (for local execution)
 - Docker
+
+---
+
+## Windows Users (Docker Requirement)
+
+Docker Desktop uses Linux containers, which require Windows Subsystem for Linux (WSL2).
+
+If prompted, install WSL by running:
+
+
+wsl --install
+
+
+Then restart your computer and reopen Docker.
+
+This is required because Docker uses a lightweight Linux environment to run containers on Windows systems.
 
 ---
 
@@ -83,26 +97,31 @@ pip install -r requirements.txt
 
 ---
 
-### 2. Start the FTP Server (Required for Option 3)
+### 2. Start the FTP Server (Required for Option 4)
 
 In a terminal:
 
-python -m ftp_server.py
+python ftp_server.py
 
 
 Expected output:
 
 FTP server running on 127.0.0.1:2121
 
+
 Keep this terminal open.
 
 ---
 
-### 3. Open a New Terminal (if using vscode)
+### 3. Open a New Terminal (if using VSCode)
 
 Shortcut:
 
-ctrl + shift + ` or ctrl + shift + 5
+Ctrl + Shift + `
+
+or  
+
+Ctrl + Shift + 5
 
 
 ---
@@ -121,6 +140,7 @@ When the program starts, you will see:
 
 === CU Data Processing System ===
 
+Generate test data
 Process a file
 Process all local files
 Download and process FTP files
@@ -129,7 +149,26 @@ Exit
 
 ---
 
-## Option 1: Process a File (manual Input)
+## Option 1: Generate Test Data
+
+Select:
+
+1
+
+
+What it does:
+- Generates valid and invalid CSV files
+- Saves them into:
+
+
+ftp_root/
+
+
+These files can then be processed using other menu options.
+
+---
+
+## Option 2: Process a File (Manual Input)
 
 When prompted:
 
@@ -155,11 +194,11 @@ What happens:
 
 ---
 
-## Option 2: Process All Local Files
+## Option 3: Process All Local Files
 
 Select:
 
-2
+3
 
 
 What it does:
@@ -176,13 +215,13 @@ data/source/sample.csv
 
 ---
 
-## Option 3: Download and Process FTP Files
+## Option 4: Download and Process FTP Files
 
 Make sure FTP server is running first.
 
 Select:
 
-3
+4
 
 
 What happens:
@@ -200,11 +239,11 @@ data/source/
 
 ---
 
-## Option 4: View Logs
+## Option 5: View Logs
 
 Select:
 
-4
+5
 
 
 Displays:
@@ -220,11 +259,11 @@ Includes:
 
 ---
 
-## Option 5: Exit
+## Option 6: Exit
 
 Select:
 
-5
+6
 
 
 Closes the application.
@@ -244,23 +283,6 @@ Tests include:
 - Row length validation
 - Duplicate batch ID detection
 - Reading validation
-
----
-
-## Generate Test Data (Automation)
-
-Run:
-
-python generate_test_data.py
-
-
-This will:
-- Create valid CSV files
-- Create invalid CSV files
-- Save them into:
-
-ftp_root/
-
 
 ---
 
@@ -298,29 +320,21 @@ Example:
 
 - Application runs inside a container
 - No local setup required beyond Docker
+- FTP server and application run automatically inside the container
 
 ---
 
 ## Example Full Workflow
 
-1. Start FTP server:
+1. Generate test data:
 
-python ftp_server.py
-
-
-2. Open new terminal:
-
-Ctrl + Shift + `
+1
 
 
-3. Run program:
+2. Process FTP files:
 
-python -m src.main
+4
 
-
-4. Select:
-
-3
 
 Files will be downloaded, validated, and sorted automatically.
 
